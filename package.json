@@ -6,8 +6,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "chrome-aws-lambda": "10.1.0",
     "next": "latest",
     "node-html-to-image": "^3.2.4",
+    "puppeteer-core": "10.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

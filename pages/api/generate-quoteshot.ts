@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from "next";
 import nodeHtmlToImage from "node-html-to-image";
+import chromium from "chrome-aws-lambda";
 
 export default async function generateQuoteshot(
   req: NextApiRequest,
@@ -49,6 +50,10 @@ export default async function generateQuoteshot(
       author,
       cover,
       excerpt,
+    },
+    puppeteerArgs: {
+      args: chromium.args,
+      executablePath: await chromium.executablePath,
     },
   });
   res.writeHead(200, { "Content-Type": "image/png" });
